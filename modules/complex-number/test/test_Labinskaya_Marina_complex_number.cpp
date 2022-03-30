@@ -70,21 +70,21 @@ TEST(Labinskaya_Marina_ComplexNumberTest, Can_Multply_Two_Numbers) {
     double re1 = 1.0;
     double im1 = 2.0;
     double re2 = -1.0;
-   double im2 = 4.0;
+    double im2 = 4.0;
 
-   // Act
-   ComplexNumber z1(re1, im1);
-   ComplexNumber z2(re2, im2);
+    // Act
+    ComplexNumber z1(re1, im1);
+    ComplexNumber z2(re2, im2);
 
-   ComplexNumber z3 = z1 * z2;
+    ComplexNumber z3 = z1 * z2;
 
-   // Assert
+    // Assert
     EXPECT_DOUBLE_EQ(re1 * re2 - im1 * im2, z3.getRe());
-   EXPECT_DOUBLE_EQ(re2 * im1 + re1 * im2, z3.getIm());
+    EXPECT_DOUBLE_EQ(re2 * im1 + re1 * im2, z3.getIm());
 }
 
 TEST(Labinskaya_Marina_ComplexNumberTest, Cant_Divide_By_Zero) {
-   // Arrange
+    // Arrange
     double re1 = 1.0;
     double im1 = 2.0;
     double re2 = 0.0;
