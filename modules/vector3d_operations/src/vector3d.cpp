@@ -1,5 +1,5 @@
-//Copyright 2022 Labinskaya Marina
-#include "vector3d.h"
+// Copyright 2022 Labinskaya Marina
+#include "../include/vector3d.h"
 
 Vector3d::Vector3d(): data{ 0.0, 0.0, 0.0 } {}
 
@@ -24,9 +24,9 @@ double Vector3d::getNorm() {
 
 Vector3d Vector3d::getNormalization() {
     double norm = this->getNorm();
-	if (!norm) {
-		throw std::domain_error("Expression: null vector has no normalization.");
-	}
+    if (!norm) {
+        throw std::domain_error("Expression: null vector has no normalization.");
+    }
     Vector3d res(data[0] / norm, data[1] / norm, data[2] / norm);
     return res;
 }
