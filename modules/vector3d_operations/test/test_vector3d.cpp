@@ -1,5 +1,5 @@
-//Copyright 2022 Labinskaya Marina
-#include "vector3d.h"
+// Copyright 2022 Labinskaya Marina
+#include "../include/vector3d.h"
 #include <gtest.h>
 
 TEST(Vector3d, can_create_vector3d_without_parameters)
