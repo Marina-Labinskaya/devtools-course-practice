@@ -28,6 +28,8 @@ double Vector3d::getNorm()
 Vector3d Vector3d::getNormalization()
 {
     double norm = this->getNorm();
+	if (!norm)
+	    throw std::domain_error("Expression: null vector has no normalization.");
     Vector3d res(data[0] / norm, data[1] / norm, data[2] / norm);
     return res;
 }
@@ -38,4 +40,18 @@ bool operator ==(const Vector3d& v1, const Vector3d& v2)
         return true;
     else 
         return false;
+}
+
+double scalar_mult(const Vector3d& v1, const Vector3d& v2)
+{
+    return (v1[0] * v2[0] + v1[1] * v2[1] + v1[2] * v2[2]);
+}
+
+Vector3d vector_mult(const Vector3d& v1, const Vector3d& v2) {
+    Vector3d result;
+    result[0] = v1[1] * v2[2] - v1[2] * v2[1];
+    result[1] = -(v1[0] * v2[2] - v1[2] * v2[0]);
+    result[2] = v1[0] * v2[1] - v1[1] * v2[0];
+
+    return result;
 }

@@ -100,7 +100,7 @@ TEST(Vector3d, can_detect_not_equal_vectors3d)
     EXPECT_FALSE(v == v2);
 }
 
-TEST(Vector3d, can_get_normalization_of_not_zero_vector3d)
+TEST(Vector3d, can_get_normalization_of_not_null_vector3d)
 {
     //Arrange
     Vector3d v(2.0, 6.0, 3.0);
@@ -111,4 +111,40 @@ TEST(Vector3d, can_get_normalization_of_not_zero_vector3d)
 
     //Assert
     EXPECT_EQ(normalization, expect_res);
+}
+
+TEST(Vector3d, cant_get_normalization_of_null_vector3d)
+{
+    //Arrange & Act
+    Vector3d v;
+
+    //Assert
+    ASSERT_ANY_THROW(v.getNormalization());
+}
+
+TEST(Vector3d, can_calculate_scalar_mult)
+{
+    //Arrange
+    Vector3d v1(3.0, 4.5, 2.0);
+    Vector3d v2(1.5, -1.0, 1.0);
+
+    //Act
+    double res_of_scalar_mult = scalar_mult(v1, v2);
+
+    //Assert
+    EXPECT_DOUBLE_EQ(res_of_scalar_mult, 2.0);
+}
+
+TEST(Vector3d, can_calculate_vector_mult)
+{
+    //Arrange
+    Vector3d v1(3.0, 4.0, 2.0);
+    Vector3d v2(1.0, -1.0, 1.0);
+    Vector3d expect_res(6.0, -1.0, -7.0);
+
+    //Act
+    Vector3d res_of_vector_mult = vector_mult(v1, v2);
+
+    //Assert
+    EXPECT_EQ(res_of_vector_mult, expect_res);
 }
