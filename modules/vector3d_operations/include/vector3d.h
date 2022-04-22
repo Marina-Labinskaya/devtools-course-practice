@@ -11,7 +11,6 @@ class Vector3d {
  public:
     Vector3d();
     Vector3d(double x, double y, double z);
-    Vector3d(const Vector3d& v);
     double& operator[](double idx);
     const double& operator[](double idx) const;
     double getNorm();

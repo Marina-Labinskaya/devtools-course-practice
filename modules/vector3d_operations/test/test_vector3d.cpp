@@ -12,23 +12,6 @@ TEST(Vector3d, can_create_vector3d_with_parameters)
     ASSERT_NO_THROW(Vector3d(1.0, 2.0, 3.0));
 }
 
-TEST(Vector3d, can_create_copy_vector3d)
-{
-    //Arrange & Act
-    Vector3d v;
-    ASSERT_NO_THROW(Vector3d v2 = v);
-}
-
-TEST(Vector3d, copy_vector3d_is_equal_his_parent)
-{
-    //Arrange & Act
-    Vector3d v;
-    Vector3d v2 = v;
-
-    //Assert
-    EXPECT_EQ(v, v2);
-}
-
 TEST(Vector3d, can_get_coords)
 {
     //Arrange & Act
@@ -84,7 +67,7 @@ TEST(Vector3d, can_detect_equal_vectors3d)
 {
     //Arrange
     Vector3d v(2.0, 6.0, 3.0);
-    Vector3d v2 = v;
+    Vector3d v2(2.0, 6.0, 3.0);
 
     //Assert
     EXPECT_TRUE(v == v2);

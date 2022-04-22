@@ -5,8 +5,6 @@ Vector3d::Vector3d(): data{ 0.0, 0.0, 0.0 } {}
 
 Vector3d::Vector3d(double x, double y, double z): data { x, y, z } {}
 
-Vector3d::Vector3d(const Vector3d& v) : data{v[0], v[1], v[2]} {}
-
 double& Vector3d::operator[](double idx) {
     if (idx < 0 || idx > 2)
         throw std::out_of_range("Vector subscript out of range.");
@@ -19,8 +17,7 @@ const double& Vector3d::operator[](double idx) const {
 }
 
 double Vector3d::getNorm() {
-	return std::sqrt(scalar_mult(*this, *this));
-    // std::sqrt(data[0] * data[0] + data[1] * data[1] + data[2] * data[2]);
+    return std::sqrt(scalar_mult(*this, *this));
 }
 
 Vector3d Vector3d::getNormalization() {
