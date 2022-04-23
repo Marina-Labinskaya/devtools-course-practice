@@ -13,11 +13,10 @@ class Vector3d {
     Vector3d(double x, double y, double z);
     double& operator[](double idx);
     const double& operator[](double idx) const;
-    double getNorm();
-    Vector3d getNormalization();
+    double get_norm();
+    Vector3d get_normalization();
 };
 
-bool operator ==(const Vector3d& v1, const Vector3d& v2);
 double scalar_mult(const Vector3d& v1, const Vector3d& v2);
 Vector3d vector_mult(const Vector3d& v1, const Vector3d& v2);
 #endif  // MODULES_VECTOR3D_OPERATIONS_INCLUDE_VECTOR3D_H_

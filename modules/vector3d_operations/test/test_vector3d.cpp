@@ -1,6 +1,6 @@
 // Copyright 2022 Labinskaya Marina
 #include "../include/vector3d.h"
-#include <gtest.h>
+#include <gtest/gtest.h>
 
 TEST(Vector3d, can_create_vector3d_without_parameters)
 {
@@ -57,30 +57,10 @@ TEST(Vector3d, can_get_norm_of_vector3d)
     Vector3d v(2.0, 6.0, 3.0);
 
     //Act
-    double norm = v.getNorm();
+    double norm = v.get_norm();
 
     //Assert
     EXPECT_NEAR(norm, 7, 1e-9);
-}
-
-TEST(Vector3d, can_detect_equal_vectors3d)
-{
-    //Arrange
-    Vector3d v(2.0, 6.0, 3.0);
-    Vector3d v2(2.0, 6.0, 3.0);
-
-    //Assert
-    EXPECT_TRUE(v == v2);
-}
-
-TEST(Vector3d, can_detect_not_equal_vectors3d)
-{
-    //Arrange
-    Vector3d v(2.0, 6.0, 3.0);
-    Vector3d v2(2.0, 6.1, 3.0);
-
-    //Assert
-    EXPECT_FALSE(v == v2);
 }
 
 TEST(Vector3d, can_get_normalization_of_not_null_vector3d)
@@ -90,10 +70,11 @@ TEST(Vector3d, can_get_normalization_of_not_null_vector3d)
     Vector3d expect_res(2.0 / 7.0, 6.0 / 7.0, 3.0 / 7.0);
 	
     //Act
-    Vector3d normalization = v.getNormalization();
+    Vector3d res = v.get_normalization();
 
     //Assert
-    EXPECT_EQ(normalization, expect_res);
+    EXPECT_TRUE(res[0] == expect_res[0] &&
+	res[1] == expect_res[1] && res[2] == expect_res[2]);
 }
 
 TEST(Vector3d, cant_get_normalization_of_null_vector3d)
@@ -102,7 +83,7 @@ TEST(Vector3d, cant_get_normalization_of_null_vector3d)
     Vector3d v;
 
     //Assert
-    ASSERT_ANY_THROW(v.getNormalization());
+    ASSERT_ANY_THROW(v.get_normalization());
 }
 
 TEST(Vector3d, can_calculate_scalar_mult)
@@ -126,8 +107,9 @@ TEST(Vector3d, can_calculate_vector_mult)
     Vector3d expect_res(6.0, -1.0, -7.0);
 
     //Act
-    Vector3d res_of_vector_mult = vector_mult(v1, v2);
+    Vector3d res = vector_mult(v1, v2);
 
     //Assert
-    EXPECT_EQ(res_of_vector_mult, expect_res);
+    EXPECT_TRUE(res[0] == expect_res[0] &&
+    res[1] == expect_res[1] && res[2] == expect_res[2]);
 }
