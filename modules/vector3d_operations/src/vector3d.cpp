@@ -1,5 +1,5 @@
 // Copyright 2022 Labinskaya Marina
-#include "../include/vector3d.h"
+#include "include/vector3d.h"
 
 Vector3d::Vector3d(): data{ 0.0, 0.0, 0.0 } {}
 
