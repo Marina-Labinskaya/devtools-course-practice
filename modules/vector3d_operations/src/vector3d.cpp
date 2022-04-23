@@ -25,6 +25,7 @@ Vector3d Vector3d::get_normalization() {
     if (!norm) {
         throw std::domain_error("Null vector has no normalization.");
     }
+
     Vector3d res(data[0] / norm, data[1] / norm, data[2] / norm);
     return res;
 }
