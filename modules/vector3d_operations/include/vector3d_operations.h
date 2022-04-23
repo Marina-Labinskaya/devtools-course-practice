@@ -3,7 +3,7 @@
 #define MODULES_VECTOR3D_OPERATIONS_INCLUDE_VECTOR3D_OPERATIONS_H_
 
 #include <vector>
-#include <random>
+#include <stdexcept>
 
 class Vector3d {
  protected:
