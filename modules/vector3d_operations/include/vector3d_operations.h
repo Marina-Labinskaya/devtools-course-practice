@@ -4,6 +4,7 @@
 
 #include <vector>
 #include <stdexcept>
+#include <cmath>
 
 class Vector3d {
  protected:
