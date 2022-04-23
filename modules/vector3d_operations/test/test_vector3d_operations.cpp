@@ -1,6 +1,6 @@
 // Copyright 2022 Labinskaya Marina
 #include <gtest/gtest.h>
-#include "include/vector3d.h"
+#include "include/vector3d_operations.h"
 
 TEST(Vector3d, can_create_vector3d_without_parameters) {
     ASSERT_NO_THROW(Vector3d v);
