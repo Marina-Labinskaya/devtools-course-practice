@@ -30,11 +30,11 @@ Vector3d Vector3d::get_normalization() {
     return res;
 }
 
-double scalar_mult(const Vector3d& v1, const Vector3d& v2) {
+double Vector3d::scalar_mult(const Vector3d& v1, const Vector3d& v2) {
     return (v1[0] * v2[0] + v1[1] * v2[1] + v1[2] * v2[2]);
 }
 
-Vector3d vector_mult(const Vector3d& v1, const Vector3d& v2) {
+Vector3d Vector3d::vector_mult(const Vector3d& v1, const Vector3d& v2) {
     Vector3d result;
     result[0] = v1[1] * v2[2] - v1[2] * v2[1];
     result[1] = -(v1[0] * v2[2] - v1[2] * v2[0]);

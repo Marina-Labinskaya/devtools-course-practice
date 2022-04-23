@@ -83,7 +83,7 @@ TEST(Vector3d, can_calculate_scalar_mult) {
     Vector3d v2(1.5, -1.0, 1.0);
 
     // Act
-    double res_of_scalar_mult = scalar_mult(v1, v2);
+    double res_of_scalar_mult = v1.scalar_mult(v1, v2);
 
     // Assert
     EXPECT_DOUBLE_EQ(res_of_scalar_mult, 2.0);
@@ -96,7 +96,7 @@ TEST(Vector3d, can_calculate_vector_mult) {
     Vector3d expect_res(6.0, -1.0, -7.0);
 
     // Act
-    Vector3d res = vector_mult(v1, v2);
+    Vector3d res = v1.vector_mult(v1, v2);
 
     // Assert
     EXPECT_TRUE(res[0] == expect_res[0] &&
