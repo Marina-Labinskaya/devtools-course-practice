@@ -10,7 +10,9 @@
 operations with it: finding the norm, normalization, scalar
 and vector multiplication */
 
+// @codeCoverageIgnoreStart
 class Vector3d {
+// @codeCoverageIgnoreEnd
  protected:
     std::vector<double> data;
  public:
