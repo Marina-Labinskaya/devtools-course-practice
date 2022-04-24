@@ -6,6 +6,10 @@
 #include <stdexcept>
 #include <cmath>
 
+/* This class describes a three-dimensional vector and some
+operations with it: finding the norm, normalization, scalar
+and vector multiplication */
+
 class Vector3d {
  protected:
     std::vector<double> data;
