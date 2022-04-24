@@ -14,8 +14,8 @@ class Vector3d {
  public:
     Vector3d();
     Vector3d(double x, double y, double z);
-    double& operator[](double idx);
-    const double& operator[](double idx) const;
+    double& operator[](double pos);
+    const double& operator[](double pos) const;
     double get_norm();
     Vector3d get_normalization();
     static double scalar_mult(const Vector3d& v1, const Vector3d& v2);

@@ -6,16 +6,16 @@ Vector3d::Vector3d(): data{ 0.0, 0.0, 0.0 } {}
 
 Vector3d::Vector3d(double x, double y, double z): data { x, y, z } {}
 
-double& Vector3d::operator[](double idx) {
-    if (idx < 0 || idx > 2)
+double& Vector3d::operator[](double pos) {
+    if (pos < 0 || pos > 2)
         throw std::out_of_range("Vector subscript out of range.");
-    return data[idx];
+    return data[pos];
 }
 
-const double& Vector3d::operator[](double idx) const {
-    if (idx < 0 || idx > 2)
+const double& Vector3d::operator[](double pos) const {
+    if (pos < 0 || pos > 2)
         throw std::out_of_range("Vector subscript out of range.");
-    return data[idx];
+    return data[pos];
 }
 
 double Vector3d::get_norm() {
