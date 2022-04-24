@@ -62,6 +62,14 @@ TEST(Vector3d, cant_get_coords_out_of_range_2) {
     ASSERT_ANY_THROW(v[-2]);
 }
 
+TEST(Vector3d, cant_get_coords_out_of_range_from_const_vector3d) {
+    // Arrange & Act
+    const Vector3d v(1.0, 2.0, 3.0);
+
+    // Assert
+    ASSERT_ANY_THROW(v[-2]);
+}
+
 TEST(Vector3d, cant_set_coords_out_of_range_1) {
     // Arrange & Act
     Vector3d v(1.0, 2.0, 3.0);
