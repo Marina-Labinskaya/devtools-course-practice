@@ -46,7 +46,7 @@ TEST(Vector3d, can_get_coords_from_const_vector3d) {
     EXPECT_DOUBLE_EQ(v[1], 2.0);
 }
 
-TEST(Vector3d, cant_get_coords_out_of_range) {
+TEST(Vector3d, cant_get_coords_out_of_range_1) {
     // Arrange & Act
     Vector3d v(1.0, 2.0, 3.0);
 
@@ -54,12 +54,28 @@ TEST(Vector3d, cant_get_coords_out_of_range) {
     ASSERT_ANY_THROW(v[3]);
 }
 
-TEST(Vector3d, cant_set_coords_out_of_range) {
+TEST(Vector3d, cant_get_coords_out_of_range_2) {
+    // Arrange & Act
+    Vector3d v(1.0, 2.0, 3.0);
+
+    // Assert
+    ASSERT_ANY_THROW(v[-2]);
+}
+
+TEST(Vector3d, cant_set_coords_out_of_range_1) {
     // Arrange & Act
     Vector3d v(1.0, 2.0, 3.0);
 
     // Assert
     ASSERT_ANY_THROW(v[3] = 1.0);
+}
+
+TEST(Vector3d, cant_set_coords_out_of_range_2) {
+    // Arrange & Act
+    Vector3d v(1.0, 2.0, 3.0);
+
+    // Assert
+    ASSERT_ANY_THROW(v[-2] = 1.0);
 }
 
 TEST(Vector3d, can_get_norm_of_vector3d) {
