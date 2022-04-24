@@ -8,7 +8,7 @@ TEST(Vector3d, can_create_vector3d_without_parameters) {
 
 TEST(Vector3d, vector3d_without_parameters_is_null_vector3d) {
     // Arrange & Act
-	Vector3d v;
+    Vector3d v;
 
     // Assert
     EXPECT_TRUE(v[0] == 0.0 &&
@@ -40,10 +40,10 @@ TEST(Vector3d, can_set_coords) {
 
 TEST(Vector3d, can_get_coords_from_const_vector3d) {
     // Arrange & Act
-	const Vector3d v(1.0, 2.0, 3.0);
+    const Vector3d v(1.0, 2.0, 3.0);
 
     // Assert
-    EXPECT_DOUBLE_EQ(v[1], 2.0);  
+    EXPECT_DOUBLE_EQ(v[1], 2.0);
 }
 
 TEST(Vector3d, cant_get_coords_out_of_range) {
