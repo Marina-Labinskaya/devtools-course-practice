@@ -10,11 +10,7 @@
 operations with it: finding the norm, normalization, scalar
 and vector multiplication */
 
-// @codeCoverageIgnoreStart
 class Vector3d {
-// @codeCoverageIgnoreEnd
- protected:
-    std::vector<double> data;
  public:
     Vector3d();
     Vector3d(double x, double y, double z);
@@ -24,6 +20,8 @@ class Vector3d {
     Vector3d get_normalization();
     static double scalar_mult(const Vector3d& v1, const Vector3d& v2);
     static Vector3d vector_mult(const Vector3d& v1, const Vector3d& v2);
+ private:
+    std::vector<double> data;
 };
 
 #endif  // MODULES_VECTOR3D_OPERATIONS_INCLUDE_VECTOR3D_OPERATIONS_H_
