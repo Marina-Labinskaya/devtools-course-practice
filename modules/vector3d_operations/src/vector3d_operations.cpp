@@ -10,6 +10,7 @@ double& Vector3d::operator[](double idx) {
         throw std::out_of_range("Vector subscript out of range.");
     return data[idx];
 }
+
 const double& Vector3d::operator[](double idx) const {
     if (idx < 0 || idx > 2)
         throw std::out_of_range("Vector subscript out of range.");
