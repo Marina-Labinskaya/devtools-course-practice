@@ -6,10 +6,10 @@
 #include <string>
 
 class polygonAreaApp {
-public:
+ public:
     polygonAreaApp();
     std::string operator()(int argc, const char** argv);
-private:
+ private:
     std::string help(const std::string& appname);
     std::string argument_error();
 };
