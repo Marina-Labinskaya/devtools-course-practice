@@ -20,11 +20,11 @@ std::string polygonAreaApp::operator()(int argc, const char** argv) {
        return this->argument_error();
 
     Polygon polygon;
-    double x, y;
     std::string message;
     std::ostringstream stream;
     try {
         for (int i = 1; i < argc; i = i + 2) {
+            double x, y;
             std::string v_x = argv[i];
             std::string v_y = argv[i + 1];
 
